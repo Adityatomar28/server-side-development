@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+
+# env files (VERY IMPORTANT 🔐)
+.env
+
+# logs
+logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+
+# build folders
+dist/
+build/
+
+# frontend build (if React/Vite)
+Frontend/node_modules/
+Frontend/dist/
+
+# backend specific
+Backend/node_modules/
+
+# optional
+coverage/
