@@ -6,7 +6,7 @@ const  app = express()
 
 
 app.use(express.json()) // ye middleware hai jo json data ko parse karta hai
-const notes = []
+const notes = [] //this variable is part of program and storeed inn ram and avalue inside is stored in ram
 
 // api banani hai jisme hum notes ko add karenge server p data bhejna ho tbh use krte hai 
 app.post('/notes',(req,res) => {
@@ -50,3 +50,5 @@ app.patch('/notes/:index',(req,res) => {
 
 module.exports = app
 
+
+// server ko load krne s poora refresh hojata hai data islye data   
