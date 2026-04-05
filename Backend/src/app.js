@@ -2,9 +2,10 @@ const express = require('express');
 const multer = require('multer');
 const uploadFile = require('./services/storage.service');
 const postModel = require('./models/post.model');
+const cors = require('cors');
 
 const app = express();
-
+app.use(cors());
 //req.body m jo data aata tha usko json format m convert krne k liye middleware use krna padta hai taaki express pdh paay
 app.use(express.json());
 
