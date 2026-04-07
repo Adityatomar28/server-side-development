@@ -1,7 +1,7 @@
 const express = require("express");
 const cookieParser = require('cookie-parser');
 const authRoutes = require('./routes/auth.routes');
-
+const musicRoutes = require('./routes/music.routes')
 
 
 
@@ -11,6 +11,9 @@ app.use(express.json());
 // we can read the data that comes from cookie
 app.use(cookieParser());
 
-app.use('/api/auth,authRoutes');
+app.use('/api/auth',authRoutes);
+app.use('/api/auth',musicRoutes);
+
+
 module.exports = app
 
