@@ -60,6 +60,7 @@ async function loginUser(req,res){
     if(!user){
         return res.status(401).json({message:"Invalid credentials"})
     }
+    // jo bhi hashing string database m store hogi  usse compare krlenge
     const isPasswordValid = await bcrypt.compare(password,user.password)
 
     if(!isPasswordValid){
