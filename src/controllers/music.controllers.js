@@ -75,7 +75,10 @@ async function createAlbum(req,res){
 
 async function getAllMusics(req,res){
     // is we use populate then we get the details of all the artist instead of getting only id and we get acc or us also
-    const music = await musicModel.find().populate("artist")
+    const music = await musicModel
+    .find()
+    .limit(20)
+    .populate("artist")
 
     res.status(200).json({
         message:"Music fetched successfully",
@@ -85,7 +88,7 @@ async function getAllMusics(req,res){
 
 
 async function getAllAlbums(req,res)(
-    const albums = await albumModel.find().populate("artist","username","email").populate("musics"),
+    const albums = await albumModel.find().populate("artist","username","email").populate("musics")
 
     res.status(200).json({
         message:"Albums fetched succcessfully",
