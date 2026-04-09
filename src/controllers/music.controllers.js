@@ -2,6 +2,7 @@ const musicModel = require("../models/music.model");
 const {uploadFile} = require("../services/storage.service")
 const albumModel = require("../models/music.model")
 
+
 const jwt = require("jsonwebtoken");
 async function createMusic(req,res) {
     
@@ -77,7 +78,8 @@ async function getAllMusics(req,res){
     // is we use populate then we get the details of all the artist instead of getting only id and we get acc or us also
     const music = await musicModel
     .find()
-    .limit(20)
+    .skip(2)
+    .limit(20) //ki ik bssr m 2 hi music leke aa skte hho otherwise agr database m 1000 song ho saare sath m aajayenge problem
     .populate("artist")
 
     res.status(200).json({

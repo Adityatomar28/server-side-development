@@ -15,6 +15,7 @@ router.post("/album",authMiddleware.authArtist,musicControllers.createAlbum)
 // jitne bhi music create hoe honge wo yha create ho skta hai 
 router.get("/",authMiddleware.authUser,musicControllers.getAllMusics)
 
+
 router.get("/albums",authMiddleware.authUser,musicControllers.getAllAlbums)
 
 
